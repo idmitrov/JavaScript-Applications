@@ -1,0 +1,27 @@
+#main-header {
+  @extend .header;
+
+  position: relative;
+  padding: 2rem 1rem;
+  border-bottom: solid 0.5rem $dark-grey;
+
+  .heading {
+    font-family: 'Calibri', sans-serif;
+
+    &.main-heading {
+      font-size: 1.8rem;
+
+      @include setPosition(absolute, top, left, 50%, 50%);
+      @include setTranslate(-50%, -50%);
+    }
+  }
+
+  #main-navigation {
+    @extend .navigation;
+    text-transform: capitalize;
+
+    .nav-link {
+      margin-left: 1rem;
+    }
+  }
+}

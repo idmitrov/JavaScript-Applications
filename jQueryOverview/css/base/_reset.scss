@@ -1,0 +1,29 @@
+// THE ONLY USING OF *
+// BECAUSE PSEUDO ELEMENTS DOES NOT
+// INHERIT PARENTS
+*,
+*:before,
+*:after,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html, body, div, span,
+header, h1, h2, h3, h4, h5, h6,
+nav, ul, li, a, p {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font: $default-font-size $default-font-stack;
+}
+
+body {
+  background-color: $grey;
+}
+
+a {
+  text-decoration: none;
+}

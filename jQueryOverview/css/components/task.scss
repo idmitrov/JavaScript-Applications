@@ -1,0 +1,23 @@
+.task {
+  @extend .container-100;
+  @extend .text-left;
+
+  padding: 1rem;
+  border-bottom: solid 0.1rem $dark-grey;
+
+  &:first-child {
+    border-top: solid 0.1rem $dark-grey;
+  }
+}
+
+.task-title {
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.task-description {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: $dark-grey;
+}

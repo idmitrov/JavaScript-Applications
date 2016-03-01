@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+    <html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>jQuery Overview</title>
+
+    <!--STYLES-->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!--JS LIBRARIES-->
+    <script src="js/libs/jquery-1.12.1.min.js"></script>
+</head>
+<body>
+    <div id="main-wrapper">
+        <!--MAIN HEADER-->
+        <header id="main-header" class="header">
+            <h1 class="heading main-heading">
+                <a href="#" title="jQuery Overview" class="color-white">jQuery Overview</a>
+            </h1>
+
+            <!--MAIN NAVIGATION-->
+            <nav id="main-navigation">
+                <ul class="nav-wrapper">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#" title="Home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" title="Tasks">Tasks</a>
+
+                        <ul class="nav-wrapper sub-navigation">
+                            <li class="nav-item sub-item">
+                                <a class="nav-link" href="#task-01" title="Task 01">Task 01</a>
+                            </li>
+                            <li class="nav-item sub-item">
+                                <a class="nav-link" href="#task-02" title="Task 02">Task 02</a>
+                            </li>
+                            <li class="nav-item sub-item">
+                                <a class="nav-link" href="#task-03" title="Task 03">Task 03</a>
+                            </li>
+                            <li class="nav-item sub-item">
+                                <a class="nav-link" href="#task-04" title="Task 04">Task 04</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" title="Doc">Doc</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <!--CONTENT-->
+        <div class="content">
+            <!--TASK 01-->
+            <div id="task-01" class="task">
+                <h2 class="task-title">Problem 1.Element Insertion</h2>
+                <p class="task-description">
+                    Using jQuery write a script for adding elements before/after other elements.
+                </p>
+            </div>
+            <!--TASK 02-->
+            <div id="task-02" class="task">
+                <h2 class="task-title">Problem 2.Background Color Switch</h2>
+
+                <p class="task-description">
+                    Write a script using jQuery for switching the background color of elements with a specified class.
+                    The input should be read from an input form.
+                </p>
+
+                <div class="task-solution">
+                    <form class="input-form" action="#" method="get" name="backgroundChange">
+                        <label for="class-input">Class:</label>
+                        <input id="class-input" name="class-name" type="text">
+
+                        <label for="color-input">Color:</label>
+                        <input id="color-input" name="color" type="color">
+
+                        <button id="input-submit" type="button">Paint</button>
+                    </form>
+
+                    <ul class="output-result">
+                        <li class="bird">Hummingbird</li>
+                        <li class="bird">Nightingale</li>
+                        <li>Lizard</li>
+                        <li class="bird">Eagle</li>
+                        <li class="bird">Sparrow</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!--TASK 03-->
+            <div id="task-03" class="task">
+                <h2 class="task-title">Problem 3.Table Generator</h2>
+
+                <p class="task-description">
+                    Write a script using jQuery that reads a JSON string which contains information about cars
+                    and generates an HTML table.
+                </p>
+
+                <div class="task-solution">
+
+                </div>
+            </div>
+
+            <!--TASK 04-->
+            <div id="task-04" class="task">
+                <h2 class="task-title">Problem 4.Slideshow</h2>
+
+                <p class="task-description">Create a slideshow using jQuery:</p>
+
+                <ul>
+                    <li  class="task-description">•	Each slide can contain HTML code</li>
+                    <li  class="task-description">o	It can contain images, forms, divs, headers, links, etc.</li>
+                    <li  class="task-description">
+                        •	Implement functionality for the visible slide to automatically change to the next one after 5 seconds
+                    </li>
+                    <li  class="task-description">•	Create buttons for next and previous slide</li>
+                </ul>
+
+                <p class="task-description">
+                    Refer to the SoftUni home page to get a better idea of how the slideshow should work.
+                </p>
+
+                <div class="task-solution">
+                    <!--SLIDER WRAPPER-->
+                    <div class="slider-wrapper">
+                        <!--CONTROLS-->
+                        <div class="slider-controls-wrapper">
+                            <button class="slide-control prev">&#10096;</button>
+                            <button class="slide-control next">&#10097;</button>
+                        </div>
+
+                        <!--SLIDER-->
+                        <div class="slider">
+                            <!--SLIDE-->
+                            <div class="slide">
+                                <h3>Slide 1</h3>
+
+                                <img src="img/slide_image.jpg" width="600" height="400" alt="slide image">
+                            </div>
+                            <!--SLIDE-->
+                            <div class="slide">
+                                <h3>Slide 2</h3>
+
+                                <img src="img/slide_image.jpg" width="600" height="400" alt="slide image">
+                            </div>
+                            <!--SLIDE-->
+                            <div class="slide">
+                                <h3>Slide 3</h3>
+
+                                <img src="img/slide_image.jpg" width="600" height="400" alt="slide image">
+                            </div>
+                            <!--SLIDE-->
+                            <div class="slide">
+                                <h3>Slide 4</h3>
+
+                                <img src="img/slide_image.jpg" width="600" height="400" alt="slide image">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--FOOTER-->
+        <footer id="main-footer" class="footer">
+            <p class="footer-text">SoftUni homework 2016</p>
+        </footer>
+    </div>
+
+    <!--MAIN JS-->
+    <script src="js/main.js"></script>
+
+    <!--IF YOU DON'T RUN A SERVER USE MANUALLY IMPORTED SCRIPTS-->
+    <!--<script src="js/tasks/task01.js"></script>-->
+    <!--<script src="js/tasks/task02.js"></script>-->
+    <!--<script src="js/tasks/task03.js"></script>-->
+    <!--<script src="js/tasks/task04.js"></script>-->
+</body>
+</html>

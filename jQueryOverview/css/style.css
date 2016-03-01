@@ -1,0 +1,336 @@
+*,
+*:before,
+*:after,
+*::before,
+*::after {
+  box-sizing: border-box; }
+
+html, body, div, span,
+header, h1, h2, h3, h4, h5, h6,
+nav, ul, li, a, p {
+  margin: 0;
+  padding: 0; }
+
+html {
+  font: 62.6% "Arial", "Calibri", sans-serif; }
+
+body {
+  background-color: #EEE; }
+
+a {
+  text-decoration: none; }
+
+.text-center, .navigation .nav-wrapper.sub-navigation, #main-header #main-navigation .nav-wrapper.sub-navigation {
+  text-align: center; }
+
+.text-left, .header, #main-header, .task, .input-form,
+.output-result {
+  text-align: left; }
+
+.text-right {
+  text-align: right; }
+
+.color-white {
+  color: #FFF; }
+
+.color-black {
+  color: #000; }
+
+.background-white {
+  background-color: #FFF; }
+
+.background-black, .header, #main-header {
+  background-color: #000; }
+
+.container-0 {
+  width: 0%; }
+
+.container-10 {
+  width: 10%; }
+
+.container-20 {
+  width: 20%; }
+
+.container-30 {
+  width: 30%; }
+
+.container-40 {
+  width: 40%; }
+
+.container-50, .input-form,
+.output-result {
+  width: 50%; }
+
+.container-60 {
+  width: 60%; }
+
+.container-70 {
+  width: 70%; }
+
+.container-80 {
+  width: 80%; }
+
+.container-90 {
+  width: 90%; }
+
+.container-100, .header, #main-header, .task {
+  width: 100%; }
+
+.display-block {
+  display: inline-block; }
+
+.display-inline-block {
+  display: inline-block; }
+
+.display-inline {
+  display: inline; }
+
+.display-none {
+  display: none; }
+
+/*
+ *  Set Position
+ *  @param {CSS PROP} $type
+ *  @param {CSS PROP} $y
+ *  @param {CSS PROP} $x
+ *  @param {CSS PROP} $yValue
+ *  @param {CSS PROP} $xValue
+ *
+ *  EXAMPLE: @include setPosition(absolute, top, left, 0, 0);
+ */
+/*
+ *  Set transform: translate with all required prefixes
+ *  @param {PERCENTAGE} $x
+ *  @param {PERCENTAGE} $y
+ *
+ *  EXAMPLE: @include setTranslate(20%, 20%)
+ */
+/*
+ *  Clear float after element
+ *  @param {CSS PROP} $side
+ *
+ *  EXAMPLE: @include clearFix(both)
+ */
+/*
+ *  Add CSS on event
+ *  @param {Boolean} $self
+ *
+ *  EXAMPLE: @include on-event() { display: block }
+ */
+/*
+ *  Add Box-Shadow
+ *  @param {CSS PROP} $x
+ *  @param {CSS PROP} $y
+ *  @param {CSS PROP} $z
+ *  @param {Color} $color
+ */
+/*
+ *  Add Transition
+ *  @param {CSS PROP} $prop
+ *  @param {Number} $speed
+ *  @param {CSS PROP} $effect (OPT)
+ *  @param {Number} $delay (OPT)
+ *
+ *  EXAMPLE: @include setTransition(all, 0.5s)
+ *  EXAMPLE: @include setTransition(all, 0.5s, ease-out, 1s)
+ */
+/*
+ *  Toggle visible/invisible element
+ *  @param {String} $mode
+ *
+ *  EXAMPLE: @include toggleVisibility('on');
+ */
+#main-header {
+  position: relative;
+  padding: 2rem 1rem;
+  border-bottom: solid 0.5rem #666; }
+  #main-header .heading {
+    font-family: 'Calibri', sans-serif; }
+    #main-header .heading.main-heading {
+      font-size: 1.8rem;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      -moz-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      -o-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%); }
+  #main-header #main-navigation {
+    text-transform: capitalize; }
+    #main-header #main-navigation .nav-link {
+      margin-left: 1rem; }
+
+#main-footer {
+  border-top: solid 0.5rem #666; }
+
+.navigation, #main-header #main-navigation {
+  font-size: 1.4rem; }
+  .navigation .nav-wrapper, #main-header #main-navigation .nav-wrapper {
+    position: relative;
+    list-style-type: none; }
+    .navigation .nav-wrapper:after, #main-header #main-navigation .nav-wrapper:after {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 0;
+      font-size: 0;
+      clear: both; }
+    .navigation .nav-wrapper.sub-navigation, #main-header #main-navigation .nav-wrapper.sub-navigation {
+      position: absolute;
+      z-index: 1;
+      width: 150%;
+      background-color: #000;
+      visibility: hidden;
+      opacity: 0;
+      -webkit-transition: all 1s ease-out 0s;
+      -moz-transition: all 1s ease-out 0s;
+      -o-transition: all 1s ease-out 0s;
+      transition: all 1s ease-out 0s; }
+      .navigation .nav-wrapper.sub-navigation .nav-link, #main-header #main-navigation .nav-wrapper.sub-navigation .nav-link {
+        color: #000; }
+      .navigation .nav-wrapper.sub-navigation.visible, #main-header #main-navigation .nav-wrapper.sub-navigation.visible {
+        background-color: #000;
+        visibility: visible;
+        opacity: 1;
+        -webkit-transition: all 1s ease-out 0s;
+        -moz-transition: all 1s ease-out 0s;
+        -o-transition: all 1s ease-out 0s;
+        transition: all 1s ease-out 0s; }
+        .navigation .nav-wrapper.sub-navigation.visible .nav-link, #main-header #main-navigation .nav-wrapper.sub-navigation.visible .nav-link {
+          color: #666; }
+    .navigation .nav-wrapper .nav-item, #main-header #main-navigation .nav-wrapper .nav-item {
+      position: relative;
+      float: left; }
+      .navigation .nav-wrapper .nav-item.sub-item, #main-header #main-navigation .nav-wrapper .nav-item.sub-item {
+        float: none;
+        display: block; }
+        .navigation .nav-wrapper .nav-item.sub-item .nav-link, #main-header #main-navigation .nav-wrapper .nav-item.sub-item .nav-link {
+          margin: 1rem 0; }
+      .navigation .nav-wrapper .nav-item .nav-link, #main-header #main-navigation .nav-wrapper .nav-item .nav-link {
+        display: inline-block;
+        color: #666;
+        box-shadow: none;
+        -webkit-transition: all 1.5s ease-out 0s;
+        -moz-transition: all 1.5s ease-out 0s;
+        -o-transition: all 1.5s ease-out 0s;
+        transition: all 1.5s ease-out 0s; }
+        .navigation .nav-wrapper .nav-item .nav-link:hover, #main-header #main-navigation .nav-wrapper .nav-item .nav-link:hover, .navigation .nav-wrapper .nav-item .nav-link:active, #main-header #main-navigation .nav-wrapper .nav-item .nav-link:active, .navigation .nav-wrapper .nav-item .nav-link:focus, #main-header #main-navigation .nav-wrapper .nav-item .nav-link:focus {
+          color: #EEE;
+          -webkit-box-shadow: 0 0.1rem 0 #FFF;
+          -moz-box-shadow: 0 0.1rem 0 #FFF;
+          box-shadow: 0 0.1rem 0 #FFF;
+          -webkit-transition: all 1.5s ease-out 0s;
+          -moz-transition: all 1.5s ease-out 0s;
+          -o-transition: all 1.5s ease-out 0s;
+          transition: all 1.5s ease-out 0s; }
+        .navigation .nav-wrapper .nav-item .nav-link.active, #main-header #main-navigation .nav-wrapper .nav-item .nav-link.active {
+          color: #FFF; }
+
+.footer, #main-footer {
+  padding: 1rem;
+  background-color: #000;
+  font-size: 1.4rem; }
+  .footer .footer-text, #main-footer .footer-text {
+    color: #FFF; }
+
+.task {
+  padding: 1rem;
+  border-bottom: solid 0.1rem #666; }
+  .task:first-child {
+    border-top: solid 0.1rem #666; }
+
+.task-title {
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  margin-bottom: 1rem; }
+
+.task-description {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #666; }
+
+.content {
+  min-height: 64rem; }
+
+.task-solution:after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 0;
+  font-size: 0;
+  clear: both; }
+
+.input-form,
+.output-result {
+  float: left;
+  font-size: 1.4rem;
+  padding: 1rem; }
+
+.input-form input {
+  max-width: 100%;
+  display: block;
+  margin-bottom: 1rem; }
+
+.slider-wrapper {
+  position: relative;
+  background-color: #DDD;
+  width: 100%;
+  height: 0;
+  padding: 25% 0;
+  overflow: hidden; }
+  .slider-wrapper .slider-controls-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    -webkit-transform: translate(0, -50%);
+    -moz-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    -o-transform: translate(0, -50%);
+    transform: translate(0, -50%); }
+    .slider-wrapper .slider-controls-wrapper .slide-control {
+      font-size: 4rem;
+      background: none;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      color: #FFF; }
+      .slider-wrapper .slider-controls-wrapper .slide-control.prev {
+        float: left;
+        margin-left: 5%; }
+      .slider-wrapper .slider-controls-wrapper .slide-control.next {
+        float: right;
+        margin-right: 5%; }
+
+.slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1000%;
+  height: 100%; }
+  .slider:after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 0;
+    font-size: 0;
+    clear: both; }
+
+.slide {
+  float: left;
+  width: 10%;
+  background-color: #FFF;
+  height: 100%;
+  -webkit-transition: transform 0.5s ease-out 0s;
+  -moz-transition: transform 0.5s ease-out 0s;
+  -o-transition: transform 0.5s ease-out 0s;
+  transition: transform 0.5s ease-out 0s; }
+  .slide img {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%; }
+
+/*# sourceMappingURL=style.css.map */

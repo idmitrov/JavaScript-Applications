@@ -1,0 +1,24 @@
+// BASE
+@import 'base/variables',
+        'base/reset',
+        'base/helpers',
+        'base/_mixins',
+        'base/animations';
+
+// LAYOUT
+@import 'layout/header',
+        'layout/footer';
+
+// COMPONENTS
+@import 'components/navigation',
+        'components/footer',
+        'components/header',
+        'components/task';
+
+// CONTENT
+@import 'content/home';
+
+@import 'tasks/task01',
+        'tasks/task02',
+        'tasks/task03',
+        'tasks/task04';

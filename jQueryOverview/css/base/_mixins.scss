@@ -1,0 +1,132 @@
+/*
+ *  Set Position
+ *  @param {CSS PROP} $type
+ *  @param {CSS PROP} $y
+ *  @param {CSS PROP} $x
+ *  @param {CSS PROP} $yValue
+ *  @param {CSS PROP} $xValue
+ *
+ *  EXAMPLE: @include setPosition(absolute, top, left, 0, 0);
+ */
+@mixin setPosition($type: absolute, $y: top, $x: left, $yValue: 0, $xValue: 0) {
+  position: $type;
+
+  @if($y == top) {
+    top: $yValue;
+  } @else if($y == bottom) {
+    bottom: $yValue;
+  } @else {
+    @error 'Invalid Y position, top or bottom allowed only';
+  }
+
+  @if($x == left) {
+    left: $xValue;
+  } @else if($x == right) {
+
+  } @else {
+    right: $xValue;
+  } @else {
+    @error 'Invalid X position, left or right allowed only';
+  }
+}
+
+/*
+ *  Set transform: translate with all required prefixes
+ *  @param {PERCENTAGE} $x
+ *  @param {PERCENTAGE} $y
+ *
+ *  EXAMPLE: @include setTranslate(20%, 20%)
+ */
+@mixin setTranslate($x, $y) {
+  -webkit-transform: translate($x, $y);
+  -moz-transform: translate($x, $y);
+  -ms-transform: translate($x, $y);
+  -o-transform: translate($x, $y);
+  transform: translate($x, $y);
+}
+
+/*
+ *  Clear float after element
+ *  @param {CSS PROP} $side
+ *
+ *  EXAMPLE: @include clearFix(both)
+ */
+@mixin clearFix($side: both) {
+  &:after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 0;
+    font-size: 0;
+    clear: $side;
+  }
+}
+
+/*
+ *  Add CSS on event
+ *  @param {Boolean} $self
+ *
+ *  EXAMPLE: @include on-event() { display: block }
+ */
+@mixin on-event($self: false) {
+  @if ($self) {
+    &,
+    &:hover,
+    &:active,
+    &:focus {
+      @content;
+    }
+  } @else {
+    &:hover,
+    &:active,
+    &:focus {
+      @content;
+    }
+  }
+}
+
+/*
+ *  Add Box-Shadow
+ *  @param {CSS PROP} $x
+ *  @param {CSS PROP} $y
+ *  @param {CSS PROP} $z
+ *  @param {Color} $color
+ */
+@mixin setBoxShadow($x, $y, $z, $color) {
+  -webkit-box-shadow: $x $y $z $color;
+  -moz-box-shadow: $x $y $z $color;
+  box-shadow: $x $y $z $color;
+}
+
+/*
+ *  Add Transition
+ *  @param {CSS PROP} $prop
+ *  @param {Number} $speed
+ *  @param {CSS PROP} $effect (OPT)
+ *  @param {Number} $delay (OPT)
+ *
+ *  EXAMPLE: @include setTransition(all, 0.5s)
+ *  EXAMPLE: @include setTransition(all, 0.5s, ease-out, 1s)
+ */
+@mixin setTransition($prop, $speed, $effect: ease-out, $delay: 0s) {
+  -webkit-transition: $prop $speed $effect $delay;
+  -moz-transition: $prop $speed $effect $delay;
+  -o-transition: $prop $speed $effect $delay;
+  transition: $prop $speed $effect $delay;
+}
+
+/*
+ *  Toggle visible/invisible element
+ *  @param {String} $mode
+ *
+ *  EXAMPLE: @include toggleVisibility('on');
+ */
+@mixin toggleVisibility($mode: 'on') {
+  @if ($mode == 'on') {
+    visibility: visible;
+    opacity: 1;
+  } @else if($mode == 'off') {
+    visibility: hidden;
+    opacity: 0;
+  }
+}

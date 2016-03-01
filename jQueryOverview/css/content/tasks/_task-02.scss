@@ -1,0 +1,21 @@
+.task-solution {
+  @include clearFix(both);
+}
+
+.input-form,
+.output-result {
+  @extend .container-50;
+  @extend .text-left;
+
+  float: left;
+  font-size: 1.4rem;
+  padding: 1rem;
+}
+
+.input-form {
+  input {
+    max-width: 100%;
+    display: block;
+    margin-bottom: 1rem;
+  }
+}

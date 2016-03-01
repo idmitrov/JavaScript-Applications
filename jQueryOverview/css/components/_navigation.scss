@@ -1,0 +1,67 @@
+.navigation {
+  font-size: 1.4rem;
+
+  .nav-wrapper {
+    position: relative;
+    list-style-type: none;
+    @include clearFix(both);
+
+    &.sub-navigation {
+      @extend .text-center;
+
+      position: absolute;
+      z-index: 1;
+      width: 150%;
+      background-color: $black;
+
+      @include toggleVisibility('off');
+      @include setTransition(all, 1s);
+
+      .nav-link {
+        color: $black;;
+      }
+
+      &.visible {
+        background-color: $black;
+        @include toggleVisibility('on');
+        @include setTransition(all, 1s);
+
+        .nav-link {
+          color: $dark-grey;;
+        }
+      }
+    }
+
+    .nav-item {
+      position: relative;
+      float: left;
+
+      &.sub-item {
+        float: none;
+        display: block;
+
+        .nav-link {
+          margin: 1rem 0;
+        }
+      }
+
+      .nav-link {
+        display: inline-block;
+        color: $dark-grey;
+        box-shadow: none;
+        @include setTransition(all, 1.5s);
+
+        @include on-event() {
+          color: $grey;
+
+          @include setBoxShadow(0, 0.1rem, 0, $white);
+          @include setTransition(all, 1.5s);
+        }
+
+        &.active {
+          color: $white;
+        }
+      }
+    }
+  }
+}

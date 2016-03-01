@@ -1,0 +1,5 @@
+#main-footer {
+  @extend .footer;
+
+  border-top: solid 0.5rem $dark-grey;
+}

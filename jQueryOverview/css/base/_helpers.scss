@@ -1,0 +1,56 @@
+// TEXT ALIGN
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+// COLORS
+.color-white{
+  color: $white;
+}
+
+.color-black {
+  color: $black;
+}
+
+// BACKGROUND-COLORS
+.background-white {
+  background-color: $white;
+}
+
+.background-black {
+  background-color: $black;
+}
+
+// CONTAINERS WIDTH
+@for $width from 0 through 10 {
+  $widthPercentage: $width * 10;
+
+  .container-#{$widthPercentage} {
+    width: $width * 10%;
+  }
+}
+
+// CONTAINERS TYPE
+.display-block {
+  display: inline-block;
+}
+
+.display-inline-block {
+  display: inline-block;
+}
+
+.display-inline {
+  display: inline;
+}
+
+.display-none {
+  display: none;
+}
