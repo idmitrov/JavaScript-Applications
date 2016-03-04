@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Poll System</title>
+    <script src="../libs/jquery-1.12.1.min.js"></script>
+</head>
+<body>
+    <div id="main-wrapper">
+        <h1>Poll System</h1>
+
+        <p id="timer"></p>
+
+        <div class="question-wrapper">
+            <p class="question">How often you drink a beer?</p>
+
+            <div>
+                <input class="answer" id="beer-opt-1" type="radio" name="beer-drink" value="0">
+                <label for="beer-opt-1">Never</label>
+            </div>
+
+            <div>
+                <input class="answer" id="beer-opt-2" type="radio" name="beer-drink" value="1">
+                <label for="beer-opt-2">Once per week</label>
+            </div>
+
+            <div>
+                <input class="answer" id="beer-opt-3" type="radio" name="beer-drink" value="2">
+                <label for="beer-opt-3">Every day</label>
+            </div>
+
+            <div>
+                <input class="answer" id="beer-opt-4" type="radio" name="beer-drink" value="3">
+                <label for="beer-opt-4">Multiple times per day</label>
+            </div>
+        </div>
+
+        <div class="question-wrapper">
+            <p class="question">Whats you favorite beer?</p>
+
+            <div>
+                <input class="answer" id="beer-fav-1" type="radio" name="beer-favorite" value="0">
+                <label for="beer-fav-1">Ariana</label>
+            </div>
+
+            <div>
+                <input class="answer" id="beer-fav-2" type="radio" name="beer-favorite" value="1">
+                <label for="beer-fav-2">Zagorka</label>
+            </div>
+
+            <div>
+                <input class="answer" id="beer-fav-3" type="radio" name="beer-favorite" value="2">
+                <label for="beer-fav-3">Carlsberg</label>
+            </div>
+
+            <div>
+                <input class="answer" id="beer-fav-4" type="radio" name="beer-favorite" value="3">
+                <label for="beer-fav-4">Kameniza</label>
+            </div>
+        </div>
+
+        <input id="submit-poll" type="submit" value="Submit">
+    </div>
+
+    <script src="js/pollSystem.js"></script>
+</body>
+</html>
